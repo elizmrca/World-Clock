@@ -33,6 +33,9 @@ losAngelesTimeElement.innerHTML = `${losAngelesTime.tz("America/Los Angeles").fo
 function updateCity(event){
     //target the answer/value from that select feature
     let cityTimeZone = event.target.value;
+    if (cityTimeZone === "current"){
+        cityTimeZone = moment.tz.guess();    
+    }
     //you split it then get the first array
     let cityName = cityTimeZone.replace("_"," ").split("/")[1];
     //console.log(cityTimeZone);
@@ -57,6 +60,7 @@ function updateCity(event){
 }
 
 setInterval(updateTime, 1000);
+
 
 //connect to HTML document by calling out the select feauture
 let citiesSelectElement = document.querySelector("#city");
