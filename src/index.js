@@ -55,10 +55,16 @@ function updateCity(event){
             <small>${cityTime.format("A")}</small>
             </div>
         </div>
-    </div>`
+    </div>
+    <div class="allcities" style="text-align: center;">
+    <a href="/">ALL CITIES</a>
+</div>
+
+    `;
 
 }
 
+updateTime();
 setInterval(updateTime, 1000);
 
 
